@@ -242,7 +242,6 @@ nav, footer{
     position: relative;
     display: inline-block;
     vertical-align: middle;
-    -webkit-appearance: none;
     outline: none !important;
     font-size: 14px;
     font-weight: 800;
@@ -275,5 +274,129 @@ nav, footer{
 }
 
 .donate-now__payment-info-input{
-    margin-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.donate-now__payment-amount-input{
+    position: relative;
+}
+
+.donate-now__payment-amount-input> span{
+    position: absolute;
+    top: 0;
+    left: 20px;
+    color: white;
+    font-size: 50px;
+    font-weight: 900;
+}
+
+.payment-div{
+    margin: 20px 0;
+}
+
+.donate-now__payment-info-input > input{
+    width: 100%;
+    border-radius: 20px;
+    padding: 0 30px;
+    height: 60px;
+    border: none;
+    outline: none;
+    font-weight: 500;
+    background-color: #f9f4e8;
+}
+
+.amount-input{
+    text-align: right;
+    background-color: #254b43;
+    color: white;
+    height: 80px;
+    font-size: 50px;
+    font-weight: 900;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    width: 100%;
+    margin-bottom: 20px;
+    padding-right: 50px;
+    padding-left: 120px;
+}
+
+.thm-btn{
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    outline: none !important;
+    background-color: rgb(245, 198, 81);
+    color: #000000;
+    font-size: 14px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0;
+    border-radius: 30px;
+    padding: 15px 49px 15px;
+    transition: all 0.5s linear;
+    overflow: hidden;
+    z-index: 1;
+    border: none;
+}
+
+.donate-now__title{
+    font-weight: bolder;
+    margin-bottom: 40px;
+    font-weight: 800;
+}
+
+.page-header{
+    height: 45vh;
+    width: 100%;
+    position: relative;
+}
+
+.header-background{
+    background-image: url('../images/donation-page-header-bg.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+
+.header-bg-color{
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: #254b43;
+    height: 100%;
+    width: 100%;
+    opacity: 0.5;
+}
+
+.headers-banner-data{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+}
+.active-page-ul{
+    display: block;
+    padding: 0;
+    margin: 0;
+    font-size: 20px;
+}
+
+.active-page-ul > li{
+    display: inline-block;
+}
+
+.active{
+    color: goldenrod;
+}
+
+.headers-banner-data > h2{
+    font-size: 50px;
+    font-weight: 500;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }

@@ -1,6 +1,7 @@
 @extends('index')
 
 @section('content')
+<x-page-topheader />
 <div class="payment-div">
     <div class="container">
         @if ($message = Session::get('success'))
@@ -23,8 +24,9 @@
                         @csrf
                         <div class="row">
                             <div class="col-xl-12">
-                                <div class="donate-now__payment-info-input">
-                                    <input type="text" name="amount" value=".00">
+                                <div class="donate-now__payment-amount-input">
+                                    <span>$</span>
+                                    <input type="text" class="amount-input" name="amount" value=".00">
                                 </div>
                             </div>
                             <div class="col-xl-6">
