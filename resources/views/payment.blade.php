@@ -19,17 +19,18 @@
             @csrf
             <div class="form-row">
                 <p><input type="text" class="form-controll" name="amount" placeholder="Enter Amount" /></p>
-                <label for="card-element">
-                    Credit or debit card
-                </label>
-                <div id="card-element">
-                    <!-- A Stripe Element will be inserted here. -->
-                </div>
+                <input id="card-holder-name" type="text">
+
+                <!-- Stripe Elements Placeholder -->
+                <div id="card-element"></div>
+
+                <button id="card-button">card-holder-name
+                    Process Payment
+                </button>
 
                 <!-- Used to display form errors. -->
                 <div id="card-errors" role="alert"></div>
             </div>
-            <p><button>Submit Payment</button></p>
         </form>
     </div>
 </div>

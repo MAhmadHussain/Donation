@@ -1,26 +1,21 @@
 $('.main-carousal').owlCarousel({
-  loop: true,
-  items: 1,
-  nav: false,
-  dots: false,
-  animateOut: 'fadeOut',
-  animateIn: 'fadeIn',
-  autoplay: true,
-  autoplayhoverpause: true,
-  autoplaySpeed: 7000,
-  autoplayTimeout: 7000,
-  lazyLoad : true
+    loop: true,
+    items: 1,
+    nav: false,
+    dots: false,
+    animateOut: 'fadeOut',
+    animateIn: 'fadeIn',
+    autoplay: true,
+    autoplayhoverpause: true,
+    autoplaySpeed: 7000,
+    autoplayTimeout: 7000,
+    lazyLoad: true
 });
-// Create a Stripe client.
-var stripe = Stripe('pk_live_51Li0e3HEOIoDk9Wlj2gnyC1ZafAhxoHMpGEBdcAmKEjkIOxdCUXImOoFMePCFOfYa9ofQVDVBF0kCgwhaVTukLms00QjmZB32S');
-console.log(stripe);
-  
-// Create an instance of Elements.
-var elements = stripe.elements();
-  
-// Custom styling can be passed to options when creating an Element.
-// (Note that this demo uses a wider set of styles than the guide below.)
-var style = {
+
+const stripe = Stripe('pk_test_51LpB1LG4NcGrBWTReRCQRko3OOxOfvAkdVKBbIdQ5IluDmrYH5l6FT0WZC4sNLHhae9Dvfbhbbpm4Xoeu4xhtHrP00bLZcOaTH');
+
+const elements = stripe.elements();
+let style = {
     base: {
         color: '#32325d',
         fontFamily: '"Helvetica Neue", Helvetica, sans-serif',
@@ -34,16 +29,13 @@ var style = {
         color: '#fa755a',
         iconColor: '#fa755a'
     }
-};
-  
-// Create an instance of the card Element.
-var card = elements.create('card', {style: style});
-  
-// Add an instance of the card Element into the `card-element` <div>.
+}
+let card = elements.create('card', { style: style });
+
 card.mount('#card-element');
-  
+
 // Handle real-time validation errors from the card Element.
-card.addEventListener('change', function(event) {
+card.addEventListener('change', function (event) {
     var displayError = document.getElementById('card-errors');
     if (event.error) {
         displayError.textContent = event.error.message;
@@ -51,13 +43,13 @@ card.addEventListener('change', function(event) {
         displayError.textContent = '';
     }
 });
-  
+
 // Handle form submission.
 var form = document.getElementById('payment-form');
-form.addEventListener('submit', function(event) {
+form.addEventListener('submit', function (event) {
     event.preventDefault();
-  
-    stripe.createToken(card).then(function(result) {
+
+    stripe.createToken(card).then(function (result) {
         if (result.error) {
             // Inform the user if there was an error.
             var errorElement = document.getElementById('card-errors');
@@ -68,7 +60,7 @@ form.addEventListener('submit', function(event) {
         }
     });
 });
-  
+
 // Submit the form with the token ID.
 function stripeTokenHandler(token) {
     // Insert the token ID into the form so it gets submitted to the server
@@ -78,7 +70,7 @@ function stripeTokenHandler(token) {
     hiddenInput.setAttribute('name', 'stripeToken');
     hiddenInput.setAttribute('value', token.id);
     form.appendChild(hiddenInput);
-  
+
     // Submit the form
     form.submit();
 }
