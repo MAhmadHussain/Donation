@@ -22,6 +22,11 @@
                     <form action="{{ url('payment') }}" method="post" id="payment-form">
                         @csrf
                         <div class="row">
+                            <div class="col-xl-12">
+                                <div class="donate-now__payment-info-input">
+                                    <input type="text" name="amount" value=".00">
+                                </div>
+                            </div>
                             <div class="col-xl-6">
                                 <div class="donate-now__payment-info-input">
                                     <input type="text" placeholder="Card number" name="number">
