@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\homecontroller;
+use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\StripePaymentController;
 use Illuminate\Support\Facades\Route;
 
@@ -25,5 +26,13 @@ Route::view('/about', 'about');
 Route::view('/payment', 'payment');
 Route::view('/contact', 'contact');
 Route::post('/contact', [homecontroller::class, 'loadcontact']);
-Route::post('/payment', [StripePaymentController::class, 'charge']);
+// Route::post('/payment', [StripePaymentController::class, 'charge']);
 Route::view('/services', 'services');
+
+
+
+
+
+
+
+Route::post('/payment', [PaymentController::class, 'payment']);
